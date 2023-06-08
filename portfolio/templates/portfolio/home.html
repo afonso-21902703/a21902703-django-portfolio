@@ -1,11 +1,34 @@
 <!-- home.html -->
 
 {% extends 'portfolio/layout.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block aditionalStyles %}
+<link rel="stylesheet" href="{% static 'portfolio/css/home.css' %}">
+{% endblock %}
 
 {% block main %}
-	<h3>Titulo</h3>
-    <p>texto texto texto texto texto texto texto </p>
-
-    {% load static %}
-    <img src="{% static 'portfolio/images/david.marcu.jpg' %}">
+    <div class="name-aside">
+        <div class="nome">
+            <h1>Afonso Costa</h1>
+        </div>
+        <aside>
+            Comece onde você está, use o que você tem e faça o que você pode.
+        </aside>
+    </div>
+{% endblock %}
+{% block article %}
+    <div class="about-me-container">
+        <div><h1>About me</h1></div>
+        <div class="about-me" id="sobre-mim">
+            {% for title,items in aboutMeItems.items %}
+                <div class="degree">
+                    <h2> {{ title }}</h2>
+                    {% for item in items %}
+                        <p>{{ item }}</p>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

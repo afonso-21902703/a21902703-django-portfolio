@@ -1,0 +1,44 @@
+{% extends 'portfolio/layout.html' %}
+{% load static %}
+{% block title %}Projects{% endblock %}
+{% block aditionalStyles %}
+<link rel="stylesheet" href="{% static 'portfolio/css/projects.css' %}">
+{% endblock %}
+
+{% block main %}
+
+    <div class="projects-container">
+        <div class="projects">
+            {% for project in projects %}
+                <div class="project-1">
+                    <div class="project-title">
+                        <h2>{{ project.title }}</h2>
+                    </div>
+                    <div class="project-image"></div>
+                    <div class="cadeira">
+                        <p>{{ project.cadeira}}</p>
+                    </div>
+                    <div class="participants">
+                        {% for programmer in project.programmers.all %}
+                            <p>{{ programmer.name }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="git-link">
+                        <p>{{ project.gitLink }}</p>
+                    </div>
+                    <div class="tecnologies">
+                        <p>{{ project.tecnologies }}</p>
+                    </div>
+                    <div class="utube-link">
+                        <p>{{ project.utubeLink }}</p>
+                    </div>
+                    <div class="description">
+                        <p>{{ project.description}}
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

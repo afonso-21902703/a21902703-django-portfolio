@@ -1,51 +1,113 @@
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing:border-box;
-  font-family: sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: black;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    display: grid;
+    grid-template-areas:
+        'header header nav'
+        'main main main'
+        'article article article'
+        'footer footer footer'
+    ;
+    grid-template-columns: auto;
 }
 
 header {
-  height: 10vh;
-  background: purple;
-  color: white;
-  top: 0;
-
-  /* alinhando logo e menu */
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
+    grid-area: header;
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #202F36;
+    top: 0;
+    height: 5vh;
 }
 
-header div {
-  font-size: 2em;
-  padding: 1em;
+header>h1 {
+    padding-left: 20px;
+    color: whitesmoke;
 }
 
-header nav {
-  display:flex;
-  justify-contents: flex-end;
+nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    background-color: #202F36;
+    top: 0;
 }
 
+.menu {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    color: #777;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px 10px;
+    border-radius: 12px;
 
-nav a {
-  padding: 0 1em;
-  text-decoration: none;
-  font-size: 1rem;
-  color: lightgray;
 }
 
+nav.active>.menu,
+.menu:hover {
+    color: black;
+}
+
+.dropdown-menu {
+    position: absolute;
+    left: 0;
+    top: calc(100% + .25rem);
+    background-color: white;
+    padding: .75rem;
+    border-radius: .25rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+nav.active>.menu+.dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.information-grid {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 2rem;
+}
+
+.dropdown-links {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
 
 main {
-  height: 85vh;
-  background-color:grey;
-  padding: 4em 4em;
+    grid-area: main;
+}
+
+article {
+    grid-area: article;
 }
 
 footer {
-  height:5vh;
-  display:flex;
-  justify-content: flex-end;
-  padding: 0 2vw;
-  align-items: center;
+    display: flex;
+    grid-area: footer;
+    height: 5vh;
+    background-color: black;
+    color: whitesmoke;
+    justify-content: center;
+    align-items: center;
 }
