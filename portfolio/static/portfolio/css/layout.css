@@ -17,6 +17,7 @@ body {
         'footer footer footer'
     ;
     grid-template-columns: auto;
+    min-height: 100vh;
 }
 
 header {
@@ -110,4 +111,21 @@ footer {
     color: whitesmoke;
     justify-content: center;
     align-items: center;
+}
+
+
+/* DARK-MODE */
+
+[data-theme="dark"] {
+    --back-color: #3B3B3B;
+    --text-color: #F7F7F7;
+    --fill: 0;
+}
+
+/* LIGHT-MODE */
+
+[data-theme="light"] {
+    --back-color: whitesmoke;
+    --text-color: black;
+    --fill: 1;
 }

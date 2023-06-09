@@ -5,6 +5,10 @@
 <link rel="stylesheet" href="{% static 'portfolio/css/projects.css' %}">
 {% endblock %}
 
+{% block header %}
+    {% include 'portfolio/header.html' %}
+{% endblock %}
+
 {% block main %}
 
     <div class="projects-container">
@@ -14,9 +18,11 @@
                     <div class="project-title">
                         <h2>{{ project.title }}</h2>
                     </div>
-                    <div class="project-image"></div>
+                    <div class="project-image">
+                        <img src="{{ project.image.url }}" class="image">
+                    </div>
                     <div class="cadeira">
-                        <p>{{ project.cadeira}}</p>
+                        <p>Course Subject: {{ project.cadeira}}</p>
                     </div>
                     <div class="participants">
                         {% for programmer in project.programmers.all %}
@@ -24,17 +30,16 @@
                         {% endfor %}
                     </div>
                     <div class="git-link">
-                        <p>{{ project.gitLink }}</p>
+                        <a href="{{ project.gitLink }}" id="link">Github</a>
                     </div>
                     <div class="tecnologies">
-                        <p>{{ project.tecnologies }}</p>
+                        <p>Tecnologies: {{ project.tecnologies }}</p>
                     </div>
                     <div class="utube-link">
-                        <p>{{ project.utubeLink }}</p>
+                        <a href="{{ project.utubeLink }}" id="link">Video</a>
                     </div>
                     <div class="description">
-                        <p>{{ project.description}}
-                        </p>
+                        <p>Description: {{ project.description}} </p>
                     </div>
                 </div>
             {% endfor %}

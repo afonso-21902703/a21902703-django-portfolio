@@ -1,0 +1,24 @@
+<header>
+    <h1>Portefolio</h1>
+</header>
+<nav data-dropdown>
+    <button class="menu" data-dropdown-button>Menu</button>
+    <div class="dropdown-menu information-grid">
+        <div>
+            <div class="dropdrown-heading">Portefólio</div>
+            <div class="dropdown-links">
+                <a href="{% url 'portfolio:home' %}#sobre-mim">Sobre mim</a>
+                <a href="{% url 'portfolio:projects' %}">Projects</a>
+                <a href="pw.html">Programação Web</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">About this Website</a>
+            </div>
+        </div>
+        <div>
+            <div class="dropdrown-heading">JavaScript</div>
+            <div class="dropdown-links">
+                <a href="{% url 'portfolio:dark-mode' %}" class="link">Darkmode</a>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -17,10 +17,15 @@ def home_page_view(request):
 
 
 def projects_page_view(request):
+    s = ', '
     return render(request, 'portfolio/projects.html',{
-        'projects': Project.objects.all()
+        'projects': Project.objects.all(),
+        's': s
     })
 
 
 def darkMode_page_view(request):
     return render(request, 'portfolio/dark-mode.html')
+
+def header_view(request):
+    return render(request, 'portfolio/header.html')

@@ -1,7 +1,19 @@
 header {
+    grid-area: header;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    padding-left: 10px;
     background-color: var(--back-color);
     color: var(--text-color);
     transition: background-color 1s, color 1s;
+}
+
+header>h1{
+    color: var(--text-color);
 }
 
 #toggle-dark {
@@ -19,12 +31,63 @@ header {
 }
 
 nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
     background-color: var(--back-color);
+    top: 0;
     transition: background-color 1s;
 }
 
+.menu {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    color: #777;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px 10px;
+    border-radius: 12px;
+
+}
+
+nav.active>.menu,
+.menu:hover {
+    color: black;
+}
+
 .dropdown-menu {
+    position: absolute;
+    left: 0;
+    top: calc(100% + .25rem);
     background-color: var(--back-color);
+    padding: .75rem;
+    border-radius: .25rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+nav.active>.menu+.dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.information-grid {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 2rem;
+}
+
+.dropdown-links {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
 }
 
 /* nav {
@@ -67,7 +130,7 @@ div.image-with-centered-text {
 }
 
 .image-with-centered-text {
-    background-image: url('/static/portfolio(images/david-marcu.jpg');
+    background-image: url('/static/portfolio/images/david-marcu.jpg');
     min-height: 500px;
     width: auto;
     /* background-attachment: fixed; */

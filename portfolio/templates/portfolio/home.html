@@ -6,8 +6,12 @@
 {% block aditionalStyles %}
 <link rel="stylesheet" href="{% static 'portfolio/css/home.css' %}">
 {% endblock %}
+{% block header %}
+    {% include 'portfolio/header.html' %}
+{% endblock %}
 
 {% block main %}
+
     <div class="name-aside">
         <div class="nome">
             <h1>Afonso Costa</h1>
@@ -16,8 +20,11 @@
             Comece onde você está, use o que você tem e faça o que você pode.
         </aside>
     </div>
+
 {% endblock %}
+
 {% block article %}
+
     <div class="about-me-container">
         <div><h1>About me</h1></div>
         <div class="about-me" id="sobre-mim">
@@ -31,4 +38,5 @@
             {% endfor %}
         </div>
     </div>
+
 {% endblock %}
