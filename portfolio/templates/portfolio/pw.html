@@ -1,0 +1,67 @@
+<!-- pw.html -->
+
+{% extends 'portfolio/layout.html' %}
+{% load static %}
+{% block title %}Web Development{% endblock %}
+{% block aditionalStyles %}
+<link rel="stylesheet" href="{% static 'portfolio/css/pw.css' %}">
+{% endblock %}
+{% block header %}
+    {% include 'portfolio/header.html' %}
+{% endblock %}
+
+{% block main %}
+
+    <div class="lab-section">
+        <h1>Laboratories</h1>
+        <div class="labs-container">
+        {% for lab in labs %}
+            <div class="lab">
+                <h2 class="lab-title">{{ lab.title }}</h2>
+                <p class="lab-description">
+                    {{ lab.description}}
+                </p>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+
+    <div class="technologies-section">
+        <h1>Present Tecnologies</h1>
+        <div class="technologies-container">
+            {% for technologie in Technologies %}
+                <div class="technologie">
+                    <div class="img-div">
+                        <img src="{{ technologie.logo.url }}" class="tec-image">
+                    </div>
+                    <div class="content-div">
+                        <h2 class="tec-name">{{ technologie.name }}</h2>
+                        <p class="tec-acro"> {{ technologie.acronym }}</p>
+                        <p class="tec-birth"> {{ technologie.birth }}</p>
+                        <p class="tec-creator"> {{ technologie.creator }}</p>
+                        <a id="link" href="{{ technologie.site }}">Website</a>
+                        <p class="tec-desc"> {{ technologie.description }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="news-section">
+        <h1>News</h1>
+        <div class="news-container">
+            {% for noticia in News %}
+            <div class="news">
+                <div class="img-div-news"> <img src=" {{ noticia.image.url }}" class="news-img"></div>
+                <div class="content-div-news">
+                    <h2 class="title-news">{{ noticia.title }}</h2>
+                    <p class="news-text">{{ noticia.text }}</p>
+                    <a id="link" href="{{ noticia.link }}">Link to article</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
+

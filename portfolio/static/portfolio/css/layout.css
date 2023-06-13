@@ -44,6 +44,7 @@ nav {
     position: sticky;
     background-color: #202F36;
     top: 0;
+    height: 5vh;
 }
 
 .menu {
@@ -101,16 +102,6 @@ main {
 
 article {
     grid-area: article;
-}
-
-footer {
-    display: flex;
-    grid-area: footer;
-    height: 5vh;
-    background-color: black;
-    color: whitesmoke;
-    justify-content: center;
-    align-items: center;
 }
 
 

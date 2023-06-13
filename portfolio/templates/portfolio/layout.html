@@ -5,6 +5,7 @@
     <title>{%  block title %}{%  endblock %}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'portfolio/css/layout.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/css/footer.css' %}">
     {%  block aditionalStyles %} {% endblock %}
     <script  src="{%  static 'portfolio/javascript/script.js' %}" type="text/javascript"></script>
     {% block aditionalJs %}{% endblock %}
@@ -21,7 +22,7 @@
         {% endblock %}
     </article>
     {% block footer %}
-        <footer>Afonso Costa</footer>
+        {% include 'portfolio/footer.html' %}
     {% endblock %}
 </body>
 </html>

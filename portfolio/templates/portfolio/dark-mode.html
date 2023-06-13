@@ -25,11 +25,10 @@
             <div>
                 <div class="dropdrown-heading">Portefólio</div>
                 <div class="dropdown-links">
-                    <a href="{% url 'portfolio:home' %}#sobre-mim">Sobre mim</a>
+                    <a href="{% url 'portfolio:home' %}#sobre-mim">About me</a>
                     <a href="{% url 'portfolio:projects' %}">Projects</a>
-                    <a href="pw.html">Programação Web</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="about.html">About this Website</a>
+                    <a href="{% url 'portfolio:pw' %}">Web Development</a>
+                    <a href="{% url 'portfolio:about' %}">About this website</a>
                 </div>
             </div>
             <div>
