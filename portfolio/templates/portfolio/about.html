@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %}About{% endblock %}
 {% block aditionalStyles %}
-<link rel="stylesheet" href="{% static 'portfolio/css/pw.css' %}">
+<link rel="stylesheet" href="{% static 'portfolio/css/about.css' %}">
 {% endblock %}
 
 {% block header %}
@@ -11,4 +11,16 @@
 
 {% block main %}
 
+    <div class="usedTec-section" id="section">
+        <h1>Used Tecnologies</h1>
+        {% for usedTec in usedTec %}
+            <div class="tec-used">
+
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="patterns-section" id="section">
+        <h1>Used Patterns</h1>
+    </div>
 {% endblock %}

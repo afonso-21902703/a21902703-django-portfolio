@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from datetime import datetime
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 from portfolio.models import Project, Programmer, Lab, Technologies, News
 
@@ -42,11 +45,14 @@ def pw_view(request):
 
 
 def about_view(request):
-    return render(request, 'portfolio/about.html')
+    used_tec = Technologies.objects.filter(usedInWeb=True)
+    return render(request, 'portfolio/about.html', {
+        'usedTec': used_tec
+    })
 
 
 def footer_view(request):
-    data: datetime.now()
+    data = datetime.now().strftime('%H:%M:%S')
     return render(request, 'portfolio/footer.html', {
-        'date': data
+        'data': data
     })
