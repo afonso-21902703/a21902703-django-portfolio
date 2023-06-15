@@ -14,8 +14,10 @@
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
+    /*
     position: relative;
     z-index: -1;
+    */
 }
 
 .image-name{
@@ -38,6 +40,10 @@
     flex-direction: row;
     justify-content: space-between;
     gap: 40px;
+}
+
+.image-link{
+    z-index: 1;
 }
 
 .image{

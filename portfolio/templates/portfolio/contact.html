@@ -18,7 +18,9 @@
         </div>
         <div class="social-media">
             {% for x in social_media %}
-                <a href="{{ x.link }}"><img src="{{ x.image.url }}" class="image"></a>
+                <a href="{{ x.link }}" class="image-link">
+                    <img src="{{ x.image.url }}" class="image">
+                </a>
             {% endfor %}
         </div>
     </div>
