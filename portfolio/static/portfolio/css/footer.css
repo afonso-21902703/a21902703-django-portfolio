@@ -2,7 +2,7 @@ footer {
     display: flex;
     grid-area: footer;
     height: 10vh;
-    background-color: black;
+    background-color: #202F36;
     justify-content: space-between;
     align-items: center;
     font-size: 1em;

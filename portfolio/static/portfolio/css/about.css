@@ -8,4 +8,90 @@ h1{
 
 .usedtec-section{}
 
+.tec-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+.technologie{
+    display: grid;
+    grid-template-areas:
+    'image'
+    'content'
+    ;
+    max-width: 300px;
+    min-height: 350px;
+    background-color: #777777;
+    border-radius: 20px;
+}
+
+.img-div{
+    grid-area: image;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.tec-image{
+    padding: 10px;
+    display: block;
+    max-width:230px;
+    max-height:95px;
+    width: auto;
+    height: auto;
+    border-radius: 15px;
+}
+
+.content-div{
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    row-gap: 5px;
+}
+
+.tec-desc{
+    overflow: scroll;
+}
+
 .patterns-section{}
+
+.patterns-container{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 20px;
+}
+
+.pattern{
+    display: grid;
+    grid-template-areas:
+    'title'
+    'desc'
+    ;
+    width: 400px;
+    height: 250px;
+    background-color: gray;
+    border-radius: 15px;
+    padding: 10px;
+    gap: 5px;
+}
+
+.patter-title{
+    grid-area: title;
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 10px;
+
+}
+
+.pattern-desc{
+    grid-area: desc;
+    display: flex;
+    justify-content: flex-start;
+}

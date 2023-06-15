@@ -10,5 +10,7 @@ urlpatterns = [
     path('header', views.header_view, name='header'),
     path('pw', views.pw_view, name='pw'),
     path('about', views.about_view, name='about'),
-    path('footer', views.footer_view, name='footer')
+    path('footer', views.footer_view, name='footer'),
+    path('blog', views.blog_view, name='blog'),
+    path('contact', views.contact_view, name='contact')
 ]

@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
-from portfolio.models import Project, Programmer, Lab, Technologies, News
+from portfolio.models import Project, Programmer, Lab, Technologies, News, Patterns
 
 
 def home_page_view(request):
@@ -47,12 +47,18 @@ def pw_view(request):
 def about_view(request):
     used_tec = Technologies.objects.filter(usedInWeb=True)
     return render(request, 'portfolio/about.html', {
-        'usedTec': used_tec
+        'usedTec': used_tec,
+        'patterns': Patterns.objects.all()
     })
 
 
 def footer_view(request):
-    data = datetime.now().strftime('%H:%M:%S')
-    return render(request, 'portfolio/footer.html', {
-        'data': data
-    })
+    return render(request, 'portfolio/footer.html')
+
+
+def blog_view(request):
+    return render(request, 'portfolio/blog.html')
+
+
+def contact_view(request):
+    return render(request, 'portfolio/contact.html')
