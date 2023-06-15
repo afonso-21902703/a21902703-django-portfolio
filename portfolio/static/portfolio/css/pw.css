@@ -1,3 +1,14 @@
+.page-container{
+    background-image: url("/static/portfolio/images/andre-benz-cXU6tNxhub0-unsplash (1).jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    z-index: -1;
+}
+
+
 .lab-section{
     /*height: 40vh;*/
     padding-top: 20px;
@@ -6,6 +17,7 @@
 
 .section-title{
     padding: 15px;
+    color: whitesmoke;
 }
 
 
@@ -39,6 +51,7 @@
             'title'
             'description';
     background-color: #777777;
+    opacity: 0.9;
 
 }
 
@@ -79,6 +92,7 @@
     max-width: 300px;
     min-height: 350px;
     background-color: #777777;
+    opacity: 0.9;
     border-radius: 20px;
 }
 
@@ -137,6 +151,7 @@
     width: 90%;
     height: 200px;
     background-color: #777777;
+    opacity: 0.9;
     border-radius: 15px;
 }
 

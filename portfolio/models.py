@@ -3,6 +3,12 @@ from django.db import models
 
 class Programmer(models.Model):
     name = models.CharField(max_length=50)
+    location = models.CharField(max_length=50,
+                                null=True,
+                                blank=True)
+    photo = models.ImageField(upload_to='portfolio/',
+                              null=True,
+                              blank=True)
 
     def __str__(self):
         return self.name
@@ -17,7 +23,9 @@ class Project(models.Model):
     programmers = models.ManyToManyField(Programmer)
     gitLink = models.CharField(max_length=100)
     tecnologies = models.CharField(max_length=100)
-    utubeLink = models.CharField(max_length=100, null=True, blank=True)
+    utubeLink = models.CharField(max_length=100,
+                                 null=True,
+                                 blank=True)
     description = models.CharField(max_length=250)
 
     def __str__(self):
@@ -67,6 +75,40 @@ class Patterns(models.Model):
     desc = models.CharField(max_length=500,
                             null=True,
                             blank=True)
+
+    def __str__(self):
+        return self.title
+
+
+class Author(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+
+
+class Post(models.Model):
+    author = models.ForeignKey(Author,
+                               on_delete=models.CASCADE,
+                               related_name='posts')
+    title = models.CharField(max_length=50)
+    description = models.CharField(max_length=500)
+    date = models.DateField(auto_now_add=True)
+    link = models.CharField(max_length=500,
+                            null=True,
+                            blank=True)
+    image = models.ImageField(upload_to='portfolio/',
+                              blank=False)
+
+    def __str__(self):
+        return self.title
+
+
+class SocialMedia(models.Model):
+    title = models.CharField(max_length=20)
+    link = models.CharField(max_length=500)
+    image = models.ImageField(upload_to='portfolio/',
+                              blank=False)
 
     def __str__(self):
         return self.title

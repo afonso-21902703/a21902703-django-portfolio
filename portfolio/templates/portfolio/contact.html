@@ -8,3 +8,19 @@
 {% block header %}
     {% include 'portfolio/header.html' %}
 {% endblock %}
+
+{% block main %}
+
+    <div class="contact-section">
+        <div class="image-name">
+            <img src="{{ me.photo.url }}" class="photo">
+            <p class="name-location">{{ me.name }}, {{ me.location }}</p>
+        </div>
+        <div class="social-media">
+            {% for x in social_media %}
+                <a href="{{ x.link }}"><img src="{{ x.image.url }}" class="image"></a>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

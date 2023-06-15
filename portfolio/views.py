@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
-from portfolio.models import Project, Programmer, Lab, Technologies, News, Patterns
+from portfolio.models import Project, Programmer, Lab, Technologies, News, Patterns, Author, Post, SocialMedia
 
 
 def home_page_view(request):
@@ -57,8 +57,13 @@ def footer_view(request):
 
 
 def blog_view(request):
-    return render(request, 'portfolio/blog.html')
+    return render(request, 'portfolio/blog.html', {
+        'posts': Post.objects.all,
+        'author': Author.objects.all
+    })
 
 
 def contact_view(request):
-    return render(request, 'portfolio/contact.html')
+    context = {'social_media': SocialMedia.objects.all(),
+               'me': Programmer.objects.get(name='Afonso Costa')}
+    return render(request, 'portfolio/contact.html', context)

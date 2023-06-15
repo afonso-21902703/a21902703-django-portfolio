@@ -11,37 +11,39 @@
 
 {% block main %}
 
-    <div class="usedTec-section" id="section">
-        <h1>Used Tecnologies</h1>
-        <div class="tec-container">
-            {% for usedTec in usedTec %}
-                <div class="technologie">
-                    <div class="img-div">
-                        <img src="{{ usedTec.logo.url }}" class="tec-image">
+    <div class="page-container">
+        <div class="usedTec-section" id="section">
+            <h1>Used Tecnologies</h1>
+            <div class="tec-container">
+                {% for usedTec in usedTec %}
+                    <div class="technologie">
+                        <div class="img-div">
+                            <img src="{{ usedTec.logo.url }}" class="tec-image">
+                        </div>
+                        <div class="content-div">
+                            <h2 class="tec-name">{{ usedTec.name }}</h2>
+                            <p class="tec-acro"> {{ usedTec.acronym }}</p>
+                            <p class="tec-birth"> {{ usedTec.birth }}</p>
+                            <p class="tec-creator"> {{ usedTec.creator }}</p>
+                            <a id="link" href="{{ usedTec.site }}">Website</a>
+                            <p class="tec-desc"> {{ usedTec.description }}</p>
+                            <p class="tec-usage"> {{ usedTec.useDesc }} </p>
+                        </div>
                     </div>
-                    <div class="content-div">
-                        <h2 class="tec-name">{{ usedTec.name }}</h2>
-                        <p class="tec-acro"> {{ usedTec.acronym }}</p>
-                        <p class="tec-birth"> {{ usedTec.birth }}</p>
-                        <p class="tec-creator"> {{ usedTec.creator }}</p>
-                        <a id="link" href="{{ usedTec.site }}">Website</a>
-                        <p class="tec-desc"> {{ usedTec.description }}</p>
-                        <p class="tec-usage"> {{ usedTec.useDesc }} </p>
-                    </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
-    </div>
 
-    <div class="patterns-section" id="section">
-        <h1>Used Patterns</h1>
-        <div class="patterns-container">
-            {% for pattern in patterns %}
-                <div class="pattern">
-                    <h2 class="pattern-title">{{ pattern.title }}</h2>
-                    <p class="pattern-desc">{{ pattern.desc }}</p>
-                </div>
-            {% endfor %}
+        <div class="patterns-section" id="section">
+            <h1>Used Patterns</h1>
+            <div class="patterns-container">
+                {% for pattern in patterns %}
+                    <div class="pattern">
+                        <h2 class="pattern-title">{{ pattern.title }}</h2>
+                        <p class="pattern-desc">{{ pattern.desc }}</p>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}
